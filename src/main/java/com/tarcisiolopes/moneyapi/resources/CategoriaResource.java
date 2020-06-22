@@ -13,7 +13,7 @@ public class CategoriaResource {
 	
 	@GetMapping
 	public ResponseEntity<Categoria> findAll(){
-		Categoria cat = new Categoria(1, "Receita");
+		Categoria cat = new Categoria(null, "Receita");
 		return ResponseEntity.ok().body(cat);
 	}
 }
