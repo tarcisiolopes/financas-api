@@ -44,11 +44,7 @@
 		<dependency>
     		<groupId>org.hibernate.validator</groupId>
     		<artifactId>hibernate-validator</artifactId>
-<<<<<<< HEAD
-    		<version>6.1.5.Final</version>
-=======
-    		<version>6.1.0.Final</version>
->>>>>>> 6725c7552e0461f43c4aaedcb6152d61381bc81c
+	  		<version>6.1.5.Final</version>
 		</dependency>
 		
 		<dependency>
