@@ -37,7 +37,6 @@ public class PessoaResource {
 	@Autowired
 	private PessoaService pessoaService;
 	
-	
 	@GetMapping("/{id}")
 	public Optional<Pessoa> buscarPorId(@PathVariable Integer id) {
 		return pessoaRepository.findById(id);
