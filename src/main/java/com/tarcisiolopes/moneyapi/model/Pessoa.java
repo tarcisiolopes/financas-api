@@ -1,7 +1,5 @@
 package com.tarcisiolopes.moneyapi.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,9 +13,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "pessoa")
-public class Pessoa implements Serializable {
-	private static final long serialVersionUID = 1L;
-
+public class Pessoa{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
