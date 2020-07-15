@@ -30,6 +30,7 @@ import com.tarcisiolopes.moneyapi.exceptionhandler.ExceptionHandler.Erro;
 import com.tarcisiolopes.moneyapi.model.Lancamento;
 import com.tarcisiolopes.moneyapi.repositories.LancamentoRepository;
 import com.tarcisiolopes.moneyapi.repositories.filter.LancamentoFilter;
+import com.tarcisiolopes.moneyapi.repositories.projection.ResumoLancamento;
 import com.tarcisiolopes.moneyapi.service.LancamentoService;
 import com.tarcisiolopes.moneyapi.service.exception.PessoaInexistenteOuInativaException;
 
@@ -53,6 +54,12 @@ public class LancamentoResource {
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LANCAMENTO') and #oauth2.hasScope('read')")
 	public Page<Lancamento> pesquisar(LancamentoFilter lancamentoFilter, Pageable pageable){
 		return lancamentoRepository.filtrar(lancamentoFilter, pageable);
+	}
+	
+	@GetMapping(params = "resumo")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LANCAMENTO') and #oauth2.hasScope('read')")
+	public Page<ResumoLancamento> resumir(LancamentoFilter lancamentoFilter, Pageable pageable){
+		return lancamentoRepository.resumir(lancamentoFilter, pageable);
 	}
 	
 	@GetMapping("/{id}")
